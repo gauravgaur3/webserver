@@ -29,6 +29,9 @@ public class Server {
             PrintWriter toClient = new PrintWriter(acceptedConnection.getOutputStream());
             BufferedReader fromClient = new BufferedReader(new InputStreamReader(acceptedConnection.getInputStream()));
             toClient.println("Hello from server");
+            toClient.close();
+            fromClient.close();
+            acceptedConnection.close();
         }
     }
 }
